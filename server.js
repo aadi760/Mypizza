@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express=require("express");
 const app=express();
 app.use(express.json());
@@ -10,9 +11,9 @@ const orderRoute=require('./routes/orderRoute');
 const path=require('path')
 
 if(process.env.NODE_ENV === 'production'){
-    app.use('/',express.static('client/public'))
+    app.use('/',express.static('client/build'))
     app.get('*',(req,res)=>{
-        res.sendFile(path.resolve(__dirname,'client/public/index.html'));
+        res.sendFile(path.resolve(__dirname,'client/build/index.html'));
     })
 }
 
