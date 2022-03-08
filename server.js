@@ -10,16 +10,17 @@ const userRoute=require('./routes/userRoute');
 const orderRoute=require('./routes/orderRoute');
 const path=require('path')
 
+
+app.use('/api/pizzas/',pizzasRoute);
+app.use('/api/users/',userRoute);
+app.use('/api/orders/',orderRoute);
+
 if(process.env.NODE_ENV === 'production'){
     app.use('/',express.static('client/build'))
     app.get('*',(req,res)=>{
         res.sendFile(path.resolve(__dirname, 'client/build/index.html'));
     })
 }
-
-app.use('/api/pizzas/',pizzasRoute);
-app.use('/api/users/',userRoute);
-app.use('/api/orders/',orderRoute);
 const port=process.env.PORT||5000;
 
 

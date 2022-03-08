@@ -2,7 +2,7 @@
 
 const mongoose=require('mongoose');
 
-let mongoUrl="mongodb+srv://Aadibad:Aadibad01@cluster0.zy0ek.mongodb.net/mern-pizza";
+let mongoUrl=  "mongodb+srv://Aadibad:Aadibad01@cluster0.zy0ek.mongodb.net/mern-pizza";
 mongoose.connect(mongoUrl,{useUnifiedTopology:true,useNewUrlParser:true});
 let db=mongoose.connection;
  
